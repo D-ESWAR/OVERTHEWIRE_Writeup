@@ -1,0 +1,137 @@
+Opne terminal level0 -> level1 login
+ssh bandit0@bandit.labs.overthewire.org. -p 2220
+password:bandit0
+USE	1.ls         -to list the files(readme file is exist)
+	2.cat readme -to show the content of file mixed words for level 1 password(ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If)
+
+Level1 -> level2
+ssh bandit1@bandit.labs.overthewire.org. -p 2220
+password:ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+use	1.ls	-to show list files like hyphen "-" file format 
+	2.cat ./- -this format to open '-' files to (263JGJPfgU6LtdEvgfWU1XP5yac29mFx)
+
+Level2 -> level3
+ssh bandit2@bandit.labs.overthewire.org. -p 2220
+password:263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+use	1.ls				       -to list file as --spaces in this filename
+	2.cat ./--spaces\ in\ this\ filename-- -you can see the password(MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx)
+ 
+
+Level3 -> level2
+ssh bandit4@bandit.labs.overthewire.org. -p 2220
+password:MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+use	1.ls -to list th files and folder "inhere"
+	2.cd -change directries to "inhere"
+	3.ls -a -to list hidden files(before you type ls does not show anything)"...hiding-from-you"
+	4.cat ...hiding-from-you -you get answer(2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ)
+
+Level4 -> level5
+ssh bandit4@bandit.labs.overthewire.org. -p 2220
+password:2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+use	1.ls -to list th files and folder "inhere"
+	2.cd -change directries to "inhere"
+	3.ls - show more files
+	4.find ./* -it show the file content in acsii text and others
+	5.cat ./-file07 it show content(40QYVPkxZ00E005pTW81FB8j8lxXGUQW)
+
+Level5 -> level6
+ssh bandit5@bandit.labs.overthewire.org. -p 2220
+password:40QYVPkxZ00E005pTW81FB8j8lxXGUQW
+use:
+	ls
+	cd inhere
+ 	ls
+	find . -size 1033c  -specofiyin the size 'c' bytes & find . is searchin in current droectries
+	cat ./maybehere07/.file2	HWasnphtq9AVKe0dmk45nxy20cvUa6EG
+
+Level6 -> level7
+ssh bandit6@bandit.labs.overthewire.org. -p 2220
+password:HWasnphtq9AVKe0dmk45nxy20cvUa6EG
+use:
+	find / -user bandit7 -group bandit6 -size 33c
+	cat  /var/something/password  morbNTDkSW6jIlUc0ymOdMaLn0lFVAaj
+
+
+Level7 -> level8
+ssh bandit7@bandit.labs.overthewire.org. -p 2220
+password:morbNTDkSW6jIlUc0ymOdMaLn0lFVAaj
+use 
+	 cat data.txt | grep millionth dfwvzFQi4mU0wfNbF0e9RoWskMLg7eEc
+
+Level8 -> level9
+ssh bandit8@bandit.labs.overthewire.org. -p 2220
+password:dfwvzFQi4mU0wfNbF0e9RoWskMLg7eEc
+use 	
+	cat data.txt | sort | uniq -u  4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+
+
+
+Level9 -> level10
+ssh bandit9@bandit.labs.overthewire.org. -p 2220
+password:4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+use 	
+	cat data.txt | grep =         FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey 
+
+Level10 -> level11
+ssh bandit10@bandit.labs.overthewire.org. -p 2220
+password:FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+use 	
+	cat data.txt | base64 -d      dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+
+Level11 -> level12
+ssh bandit11@bandit.labs.overthewire.org. -p 2220
+password:FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+use 	
+	cat data.txt | tr a-zA-z n-za-mN-ZA-M  7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+
+
+Level12 -> level13
+ssh bandit12@bandit.labs.overthewire.org. -p 2220
+password:7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+use 	
+	xxd -r data.txt data
+	checks file, cases totally 3
+	1.gzip if mv data data.gz and gunzip data.gz
+	2.bzip2 if mv data data.bz2 and bunzip data.bz2
+	3.tar if tar xvf or -xf or xxf data.bin
+	4.repeat unit file is acsii       F05dwFsc0cbaliH0h8J2eUks2vdTDwAn
+
+Level13 -> level14
+ssh bandit13@bandit.labs.overthewire.org. -p 2220
+password:	F05dwFsc0cbaliH0h8J2eUks2vdTDwAn
+use 
+	1.ls
+	2.cat sshprivate.key
+	3.exit 
+	4. form our machine nano sshkey.private content pase
+	5.chmod 600 sshkeyprivate
+ 	6.ssh -i sshkey.private -p 2220 bandit14@bandit.labs.overthewire.org
+	7. cat /etc/bandit_pass/bandit14
+	8.MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+
+Level14 -> level15
+ssh bandit14@bandit.labs.overthewire.org. -p 2220
+password:	MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+use 
+	1.ls
+	2.cat /etc/bandit_pass/bandit14
+	3.cp yhe password 
+	3.nc localhost 30000
+	4.MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS  enter 8xCjnmgoKbGLhHFAZLGE5Tmu4M2tKJQo
+
+
+
+Level15 -> level16
+ssh bandit15@bandit.labs.overthewire.org. -p 2220
+password:	8xCjnmgoKbGLhHFAZLGE5Tmu4M2tKJQo
+use 
+	1.ls
+	2.cat /etc/bandit_pass/bandit15
+	3.cp the password
+	4.openssl s_client -connect localhost:30001
+	5.enter the password you get kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
