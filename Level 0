@@ -1,0 +1,17 @@
+Level 0
+
+This is a pretty simple level. It teaches us to connect to a host using SSH. This is going to teach players the usage of SSH command.
+
+We got the required information from reading the instruction page.
+
+Host: bandit.labs.overthewire.org
+
+Port: 2220
+
+Username: bandit0
+
+Password: bandit0
+
+We used the above information to login using ssh as shown in the given image.
+
+ssh bandit0@bandit.labs.overthewire.org -p 2220
